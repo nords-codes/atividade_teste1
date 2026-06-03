@@ -1,43 +1,7 @@
 
 <?php
 
-    session_start();
-
-    $host = "localhost";
-    $user = "root";
-    $pass = "root";
-    $db = "sistema_simples";
-
-    $conn = new mysqli($host,$user,$pass,$db);
-
-    if($conn->connect_error){
-        die("Erro na Conexão");
-    }else{
-        echo ("<p> DB: ok </p>");
-    }
-
-    if($_SERVER["REQUEST_METHOD"] == "POST"){
-
-        $usuario = $_POST["usuario"];
-        $senha = $_POST["senha"];
-
-        $sql = "SELECT * FROM usuario WHERE usuario = '$usuario' AND senha = '$senha'";
-
-        $resultado = $conn -> query($sql);
-
-        if ($resultado -> num_rows > 0){
-            $_SESSION["usuario"] = $usuario;
-        
-            header("Location: public/home.php");
-            exit();
-           
-        }else{
-             $erro = "Usuario ou senha invalidos.";
-        }
-    }
-
-
-
+  include("../db/conect.php")
 ?>
 
 <html lang="en">
