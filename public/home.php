@@ -1,7 +1,9 @@
 <?php
 
 include("../db/conect.php");
+//include serviu para incluir um codigo da pagina conect para essa pagina sem ter que copialo inteiro 
 if(isset)
+//isset serve para verificar se a variavel que sta sendo usada o if em questão realmente existe e se não da um valor null 
 ?>
 <html lang="en">
 <head>
